@@ -1,10 +1,11 @@
 const express = require("express");
 const colors = require("colors");
 const dotenv = require("dotenv").config();
-const port = process.env.PORT || 4000;
 const routes = require("./routes/shoppingRoutes");
 const { errorHandler } = require("./middleware/errorMiddleware");
 const connectDB = require("./config/db");
+
+const port = process.env.PORT || 4000;
 
 connectDB();
 
@@ -15,7 +16,8 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/products", routes);
 
-app.use(errorHandler); /* overide default express error handler */
+/* overide default express error handler */
+app.use(errorHandler);
 
 {
   /*
