@@ -1,0 +1,29 @@
+{
+  "name": "online-shopping",
+  "version": "1.0.0",
+  "description": "Online Shopping App using MERN stack",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/TheophilusM/OnlineShopping.git"
+  },
+  "author": "Theophilus Muganhu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheophilusM/OnlineShopping/issues"
+  },
+  "homepage": "https://github.com/TheophilusM/OnlineShopping#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
