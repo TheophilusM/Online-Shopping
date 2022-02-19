@@ -1,11 +1,11 @@
-### MERN Online Shopping App Functions
+### **MERN Online Shopping App Functions**
 * User authentication
 * Retrieving all products
 * Creating new product
 * Deleting a product
 * Updating a product
 
-### npm packages
+### **npm packages**
 
 #### backend
 * express					- Allows to set up middlewares to respond to HTTP Requests
@@ -19,7 +19,7 @@
 
 #### mobile
 
-### Development tools
+### **Development tools**
 * Git                       - Version control
 * Postman                   - Testing APIs
 * MongoDB                   - NoSQL Database
