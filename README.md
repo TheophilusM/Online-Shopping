@@ -7,7 +7,7 @@
 
 ### **NPM Packages**
 
-#### >> Backend
+#### >> **Backend**
 * express					- Allows to set up middlewares to respond to HTTP Requests
 * dotenv 					- Use environmental variables
 * mongoose					- To connect application with MongoDB database
@@ -15,9 +15,9 @@
 * nodemon					- Auto run server.js file after adding changes
 * express-async-handler		- To allow try catch functionality on async functions
 
-#### >> Frontend
+#### >> **Frontend**
 
-#### >> Mobile
+#### >> **Mobile**
 
 ### **Development tools**
 * Git                       - Version control
