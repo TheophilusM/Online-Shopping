@@ -5,9 +5,9 @@
 * Deleting a product
 * Updating a product
 
-### **npm packages**
+### **NPM Packages**
 
-#### backend
+#### Backend
 * express					- Allows to set up middlewares to respond to HTTP Requests
 * dotenv 					- Use environmental variables
 * mongoose					- To connect application with MongoDB database
@@ -15,9 +15,9 @@
 * nodemon					- Auto run server.js file after adding changes
 * express-async-handler		- To allow try catch functionality on async functions
 
-#### frontend
-
-#### mobile
+#### Frontend
+s
+#### Mobile
 
 ### **Development tools**
 * Git                       - Version control
