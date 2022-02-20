@@ -19,13 +19,43 @@
 * nodemailer - Send an email to a user
 * simple-oauth2 - Authenticate email or phone number
 * multer - for uploading files
+* express-fileupload
+* 
+* 
+* 
+* 
+* 
 
 #### >> **Frontend**
+* react-route-dom
+* material-ui
+* spinners
+* toastify
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
 
 #### >> **Mobile**
 
 ### **Development tools**
-* Git - Version control
+* React JS - Frontend using React libriary
+* Angular JS - Frontend using Angular framework
+* Vue JS - Frontend using Vue framework
+* Next JS - Frontend using Next framewrk
+* Node JS - Backend REST APIs using Node JS runtime environment
+* Java - Backend REST APIs using Jave Programming Language
+* MongoDB - NoSQL Cloud Database
+* Google Cloud Service - For uploading files
+* Amazon Web Service - For uploading files
+* Cloudinary - For uploading files
+* Git & GitHub - Version control
 * Postman - Testing APIs
-* MongoDB - NoSQL Database
 * MongoDB Campus - Connecting locally to MongoDB database
