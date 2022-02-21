@@ -28,11 +28,11 @@
 
 #### >> **Frontend**
 * react-route-dom
-* material-ui
+* material-ui packages
 * spinners
-* toastify
-* 
-* 
+* react-toastify
+* axios
+* react-spinners
 * 
 * 
 * 
