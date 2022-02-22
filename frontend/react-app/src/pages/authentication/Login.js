@@ -1,7 +1,11 @@
 import "../../styles/login.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+<<<<<<< HEAD
 import { Button, Checkbox, IconButton } from "@mui/material";
+=======
+import { Button, IconButton } from "@mui/material";
+>>>>>>> 7b71d15be9e855dd696586395206473a44a585c1
 import {
   Email,
   Password,
@@ -137,12 +141,15 @@ function Login() {
               <Password className="login-icon" />
             </p>
           </div>
+<<<<<<< HEAD
           <div className="login-remember-me">
             <IconButton>
               <Checkbox />
             </IconButton>
             <span className="login-remember-me-text">Remember me?</span>
           </div>
+=======
+>>>>>>> 7b71d15be9e855dd696586395206473a44a585c1
           <div className="login-input-section">
             <Button
               className="login-submit-button"
