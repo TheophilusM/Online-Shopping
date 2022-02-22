@@ -171,11 +171,7 @@ const deleteUser = asyncHandler(async (req, res) => {
 });
 
 // @desc Activate User
-<<<<<<< HEAD
 // @route PATCH /api/users/activate/:id
-=======
-// @route PUT /api/users/activate/:id
->>>>>>> 7b71d15be9e855dd696586395206473a44a585c1
 // @access Private
 const activateUser = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id);
@@ -185,17 +181,10 @@ const activateUser = asyncHandler(async (req, res) => {
     throw new Error("No such user found");
   }
 
-<<<<<<< HEAD
   const update = await User.findOneAndUpdate({ _id: req.params.id }, req.body, {
     new: true,
     runValidators: true,
   });
-=======
-  const update = await User.updateOne(
-    { _id: req.params.id },
-    { $set: { ...user, active: req.body.active } }
-  );
->>>>>>> 7b71d15be9e855dd696586395206473a44a585c1
 
   if (!update) {
     res.status(400);
@@ -208,11 +197,7 @@ const activateUser = asyncHandler(async (req, res) => {
 });
 
 // @desc Deactive User
-<<<<<<< HEAD
 // @route PATCH /api/users/deactivate/:id
-=======
-// @route PUT /api/users/deactivate/:id
->>>>>>> 7b71d15be9e855dd696586395206473a44a585c1
 // @access Private
 const deactivateUser = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id);
@@ -222,17 +207,10 @@ const deactivateUser = asyncHandler(async (req, res) => {
     throw new Error("No such user found");
   }
 
-<<<<<<< HEAD
   const update = await User.findOneAndUpdate({ _id: req.params.id }, req.body, {
     new: true,
     runValidators: true,
   });
-=======
-  const update = await User.updateOne(
-    { _id: req.params.id },
-    { $set: { active: req.body.active } }
-  );
->>>>>>> 7b71d15be9e855dd696586395206473a44a585c1
 
   if (!update) {
     res.status(400);
@@ -245,11 +223,7 @@ const deactivateUser = asyncHandler(async (req, res) => {
 });
 
 // @desc Update User Password
-<<<<<<< HEAD
 // @route PATCH /api/users/password/reset/:id
-=======
-// @route PUT /api/users/password/reset
->>>>>>> 7b71d15be9e855dd696586395206473a44a585c1
 // @access Private
 const updateUserPassword = asyncHandler(async (req, res) => {
   const { email, oldPassword, newPassword } = req.body;
@@ -267,19 +241,14 @@ const updateUserPassword = asyncHandler(async (req, res) => {
     throw new Error("No such user");
   }
 
-<<<<<<< HEAD
   if (!(await bcrypt.compare(oldPassword, userExist.password))) {
     res.status(400);
     throw new Error("Incorrect credentials");
   }
-
-=======
->>>>>>> 7b71d15be9e855dd696586395206473a44a585c1
   //   Check if user old password is correct
   if (userExist && (await bcrypt.compare(oldPassword, userExist.password))) {
     //   Hash Password
     const salt = await bcrypt.genSalt(10);
-<<<<<<< HEAD
     const hashedPassword = await bcrypt.hash(newPassword, salt);
 
     const updatePassword = await User.findOneAndUpdate(
@@ -287,13 +256,6 @@ const updateUserPassword = asyncHandler(async (req, res) => {
       { password: hashedPassword },
       { new: true, runValidators: true }
     );
-=======
-    const hashedPassword = await bcrypt.hash(password, salt);
-
-    const updatePassword = await User.updateOne(email, {
-      $set: { password: hashedPassword },
-    });
->>>>>>> 7b71d15be9e855dd696586395206473a44a585c1
 
     if (!updatePassword) {
       res.status(400);
@@ -301,11 +263,7 @@ const updateUserPassword = asyncHandler(async (req, res) => {
     }
 
     if (updatePassword) {
-<<<<<<< HEAD
       res.status(200).json({ message: "Password updated sucessfully" });
-=======
-      res.status(200).json(userExist);
->>>>>>> 7b71d15be9e855dd696586395206473a44a585c1
     }
   } else {
     res.status(400);
@@ -313,7 +271,6 @@ const updateUserPassword = asyncHandler(async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
 // @desc Update User Password with Link
 // @route PATCH /api/users/password/reset/:id
 // @access PUPLIC
@@ -358,8 +315,6 @@ const updateUserPasswordLink = asyncHandler(async (req, res) => {
   }
 });
 
-=======
->>>>>>> 7b71d15be9e855dd696586395206473a44a585c1
 // @desc Forgot Password
 // @route GET /api/users/password/reset
 // @access Public
@@ -436,8 +391,5 @@ module.exports = {
   getDeletedUsers,
   getInactiveUsers,
   updateUserPassword,
-<<<<<<< HEAD
   updateUserPasswordLink,
-=======
->>>>>>> 7b71d15be9e855dd696586395206473a44a585c1
 };
