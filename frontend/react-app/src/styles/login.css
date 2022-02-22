@@ -1,0 +1,127 @@
+.login-div {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form-container{
+    width: 600px;
+    box-shadow: 0px 0px var(--box-shadow-width) var(--box-shadow-color);
+    -webkit-box-shadow: 0px 0px var(--box-shadow-width) var(--box-shadow-color);
+    -moz-box-shadow: 0px 0px var(--box-shadow-width) var(--box-shadow-color); 
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.login-input-label span {
+    color: var(--red);
+}
+
+.login-heading {
+    text-align: center;
+}
+
+.login-have-account {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: rgb(77, 77, 77);
+}
+
+.login-have-account-signin {
+    cursor: pointer;
+    color: var(--red);
+}
+
+.login-input-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.login-input-label {
+    width: 150px;
+    margin-right: 5px;
+    font-family: var(--roboto);
+    letter-spacing: 0.5px;
+    font-size: 14px;
+}
+
+.login-input {
+    width: 300px;
+    height: 28px;
+    padding-left: 5px;
+    font-family: var(--roboto);
+    border: none;
+    outline: none;
+    border: 1px solid rgb(212, 212, 212);
+    border-left: 3px solid var(--green);
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.login-input-wrong {
+    border-left: 3px solid var(--red);
+}
+
+.login-input-hint {
+    color: var(--grey);
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+.login-icon {
+    color: rgb(60, 60, 63) !important;
+}
+
+.login-password-toggle-container {
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    right: 0px;
+    top: 0px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-submit-button {
+    box-shadow: var(--shadow) !important;
+    -webkit-box-shadow: var(--shadow) !important;
+    -moz-box-shadow: var(--shadow) !important;
+    padding: 2px 10px !important;
+    margin-top: 10px !important;
+}
+
+.login-visibility-icon {
+    color: rgb(151, 151, 151) !important;
+}
+
+.login-error-container {
+    width: 300px;
+    height: 30px;
+    background-color: rgb(245, 186, 186);
+    margin-top: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-error-container span {
+    color: var(--red);
+}
+
+.login-remember-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    background-color: antiquewhite;
+}
