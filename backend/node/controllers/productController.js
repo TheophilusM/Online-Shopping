@@ -4,15 +4,23 @@ const User = require("../models/userModel");
 
 // @desc Get all products
 // @route GET /api/products/all
-// @access Private
+// @access Public
 const getAllProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find();
+  const products = await Product.find({});
+  res.status(200).json(products);
+});
+
+// @desc Get all products filtered based on category
+// @route GET /api/products/category
+// @access Public
+const getAllProductsCategory = asyncHandler(async (req, res) => {
+  const products = await Product.find({ category: req.body.category });
   res.status(200).json(products);
 });
 
 // @desc Get a product
 // @route GET /api/products/:id
-// @access Private
+// @access Public
 const getProduct = asyncHandler(async (req, res) => {
   const product = await Product.find({ _id: req.params.id });
 
@@ -114,4 +122,5 @@ module.exports = {
   updateProduct,
   deleteProduct,
   getAllProducts,
+  getAllProductsCategory,
 };

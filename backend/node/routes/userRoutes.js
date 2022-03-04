@@ -5,9 +5,12 @@ const {
   getMe,
   loginUser,
   deleteUser,
+  verifyEmail,
+  verifyPhone,
   getAllUsers,
   activateUser,
   registerUser,
+  userLastScene,
   deactivateUser,
   getActiveUsers,
   forgotPassword,
@@ -24,6 +27,8 @@ userRoutes.get("/deleted", protectHandler, getDeletedUsers);
 userRoutes.get("/active", protectHandler, getActiveUsers);
 userRoutes.get("/inactive", protectHandler, getInactiveUsers);
 userRoutes.get("/forgotpassword", forgotPassword);
+userRoutes.get("/verify/phone", verifyPhone);
+userRoutes.get("/verify/email", verifyEmail);
 
 userRoutes.post("/login", loginUser);
 userRoutes.post("/register", registerUser);
@@ -34,5 +39,6 @@ userRoutes.patch("/activate/:id", protectHandler, activateUser);
 userRoutes.patch("/deactivate/:id", protectHandler, deactivateUser);
 userRoutes.patch("/password/reset/:id", protectHandler, updateUserPassword);
 userRoutes.patch("/password/link-reset", updateUserPasswordLink);
+userRoutes.patch("/lastscene/:id", protectHandler, userLastScene);
 
 module.exports = userRoutes;

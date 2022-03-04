@@ -6,6 +6,10 @@ const userSchema = mongoose.Schema(
       type: String,
       required: [true, "Please add your name"],
     },
+    phone: {
+      type: String,
+      required: [true, "Please add your phone number"],
+    },
     email: {
       type: String,
       required: [true, "Please add your email"],
@@ -25,7 +29,17 @@ const userSchema = mongoose.Schema(
     },
     admin: {
       type: String,
-      default: "level 0",
+      // enum: ["user", "admin", "superadmin"],
+      default: "user",
+    },
+    lastScene: {
+      type: Date,
+      default: Date.now(),
+    },
+    authCode: {
+      type: String,
+      expires: "3m",
+      default: "",
     },
   },
   {

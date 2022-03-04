@@ -20,8 +20,8 @@
 * simple-oauth2 - Authenticate email or phone number
 * multer - for uploading files
 * express-fileupload
-* 
-* 
+* speakeasy - for two-factor authorization
+* uuid
 * 
 * 
 * 

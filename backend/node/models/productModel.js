@@ -18,10 +18,23 @@ const productSchema = mongoose.Schema(
     category: {
       type: String,
       required: [true, "Please add product description"],
+      enum: {
+        values: [
+          "Clothing",
+          "ShoesJewelry",
+          "Books",
+          "GroceryGourmetFood",
+          "Arts",
+          "CraftsSewing",
+          "Electronics",
+        ],
+        message: "{VALUE} is not supported",
+      },
+      default: "Clothing",
     },
     inStock: {
       type: Boolean,
-      required: [true, "Please add product description"],
+      required: [true, "Please add products count"],
     },
     price: {
       type: Number,
@@ -33,7 +46,7 @@ const productSchema = mongoose.Schema(
     },
     imageUrl: {
       type: String,
-      required: [true, "Please add product name"],
+      required: [true, "Please add product image"],
     },
   },
   {

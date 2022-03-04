@@ -8,6 +8,7 @@ const {
   updateProduct,
   deleteProduct,
   getAllProducts,
+  getAllProductsCategory,
 } = require("../controllers/productController");
 const { protectHandler } = require("../middleware/authMiddleware");
 
@@ -16,26 +17,19 @@ productRoutes
   .get(protectHandler, getProducts)
   .post(protectHandler, addProduct);
 
-<<<<<<< HEAD
 productRoutes.route("/all").get(getAllProducts);
+
+productRoutes.route("/category").get(getAllProductsCategory);
 
 productRoutes
   .route("/:id")
   .get(getProduct)
-=======
-productRoutes.route("/all").get(protectHandler, getAllProducts);
-
-productRoutes
-  .route("/:id")
-  .get(protectHandler, getProduct)
->>>>>>> 7b71d15be9e855dd696586395206473a44a585c1
   .put(protectHandler, updateProduct)
   .delete(protectHandler, deleteProduct);
-
 {
   /*
     shoppingRoutes.get("/", getProducts);
-    
+     
     shoppingRoutes.post("/", addProduct);
     
     shoppingRoutes.put("/:id", updateProduct);

@@ -4,6 +4,7 @@ const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
 const nodemailer = require("nodemailer");
 const dotenv = require("dotenv").config();
+const uuid = require("uuid");
 
 // @desc Authenticated User
 // @route GET /api/users
@@ -373,6 +374,41 @@ const forgotPassword = asyncHandler(async (req, res) => {
   res.status(200).send("Check your email for reset link");
 });
 
+// @desc Activate User
+// @route PATCH /api/users/lastscene/:id
+// @access Private
+const userLastScene = asyncHandler(async (req, res) => {
+  const update = await User.findOneAndUpdate(
+    { _id: req.params.id },
+    { lastScene: Date.now() },
+    {
+      new: true,
+      runValidators: true,
+    }
+  );
+
+  if (!update) {
+    console.log("Failed to update user last scene");
+  }
+  res.status(200).send("");
+});
+
+// @desc Verify Email
+// @route PATCH /api/users/verify/email
+// @access Private
+const verifyEmail = asyncHandler(async (req, res) => {
+  const id = uuid.v4();
+  res.status(200).send(id.slice(0, 6).toLocaleUpperCase());
+});
+
+// @desc Verify Phone
+// @route PATCH /api/users/verify/phone
+// @access Private
+const verifyPhone = asyncHandler(async (req, res) => {
+  const id = uuid.v4();
+  res.status(200).send(id.slice(0, 6).toLocaleUpperCase());
+});
+
 // Generate JWT
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "30d" });
@@ -382,9 +418,12 @@ module.exports = {
   getMe,
   loginUser,
   deleteUser,
+  verifyEmail,
+  verifyPhone,
   getAllUsers,
   registerUser,
   activateUser,
+  userLastScene,
   deactivateUser,
   getActiveUsers,
   forgotPassword,
